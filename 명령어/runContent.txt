@@ -1,0 +1,5 @@
+파일 압축: V3ZipC.exe -a "압축할 폴더" "압축파일경로&명"
+
+압축 해제: V3ZipC.exe -x "zip파일경로&Name" "해제할 폴더명"
+
+분리 압축: V3ZipC -a -cm=Deflate -mt=4 -v=9MB -crypt=AES256 -p=1 "압축할 폴더 eg) c:\desktop\test\*.*" "압축파일경로&명"

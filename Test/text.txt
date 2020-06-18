@@ -1,0 +1,1 @@
+{"Name": "JY_001", "Description": "welcome", "MaxNumberOfRetries": 1, "AcceptAutomaticallyRetry": true, "EnforceUniqueReference": false, "CreationTime": "2020-06-11T12:00:00:000Z", "Id": 0}
