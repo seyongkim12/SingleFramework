@@ -70,7 +70,7 @@
       <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="받은파일_처리" sap:VirtualizedContainerService.HintSize="752,2172.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="받은파일_처리" sap:VirtualizedContainerService.HintSize="630.4,2652.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_풀태이블" />
       <Variable x:TypeArguments="scg:List(x:String)" Name="list_sheets" />
@@ -86,15 +86,13 @@
       <Variable x:TypeArguments="x:Int32" Default="1" Name="n_복사자료남버" />
       <Variable x:TypeArguments="x:String" Name="str_today" />
       <Variable x:TypeArguments="ui:Window" Name="ppt_window" />
-      <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Default="[new Dictionary(of String,String)]" Name="dic_PPT로가는좌표" />
       <Variable x:TypeArguments="x:Int32" Name="loopSwitch">
         <Variable.Default>
           <Literal x:TypeArguments="x:Int32" Value="1" />
         </Variable.Default>
       </Variable>
-      <Variable x:TypeArguments="x:Boolean" Name="bl_최종좌표" />
-      <Variable x:TypeArguments="x:Int32" Name="n_템플릿list크기" />
       <Variable x:TypeArguments="x:Int32" Name="n_loopCount" />
+      <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="dic_PPT로가는좌표" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -102,7 +100,7 @@
         <x:Boolean x:Key="IsPinned">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel - 셀찾기" sap:VirtualizedContainerService.HintSize="710.4,52.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" WorkbookPath="[in_str_InputPath +&quot;\noname.xls&quot;]">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel - 셀찾기" sap:VirtualizedContainerService.HintSize="588.8,52.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" WorkbookPath="[in_str_InputPath +&quot;\noname.xls&quot;]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
@@ -125,7 +123,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ExcelApplicationScope>
-    <Assign DisplayName="Assign - 오늘 날짜" sap:VirtualizedContainerService.HintSize="710.4,60" sap2010:WorkflowViewState.IdRef="Assign_17">
+    <Assign DisplayName="Assign - 오늘 날짜" sap:VirtualizedContainerService.HintSize="588.8,60" sap2010:WorkflowViewState.IdRef="Assign_17">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[str_today]</OutArgument>
       </Assign.To>
@@ -133,7 +131,7 @@
         <InArgument x:TypeArguments="x:String">[Now.ToString("yyyy-MM-dd")]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign DisplayName="Assign - 파일경로" sap:VirtualizedContainerService.HintSize="710.4,60" sap2010:WorkflowViewState.IdRef="Assign_15">
+    <Assign DisplayName="Assign - 파일경로" sap:VirtualizedContainerService.HintSize="588.8,60" sap2010:WorkflowViewState.IdRef="Assign_15">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[str_filePath]</OutArgument>
       </Assign.To>
@@ -141,7 +139,7 @@
         <InArgument x:TypeArguments="x:String">[in_str_OutputPath + "\" + str_today]</InArgument>
       </Assign.Value>
     </Assign>
-    <Parallel DisplayName="Parallel - 오늘의 결과파일" sap:VirtualizedContainerService.HintSize="710.4,52.8" sap2010:WorkflowViewState.IdRef="Parallel_2">
+    <Parallel DisplayName="Parallel - 오늘의 결과파일" sap:VirtualizedContainerService.HintSize="588.8,52.8" sap2010:WorkflowViewState.IdRef="Parallel_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -165,7 +163,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:CopyFile>
     </Parallel>
-    <Parallel DisplayName="Parallel - 넣어야할좌표 기록" sap:VirtualizedContainerService.HintSize="710.4,52.8" sap2010:WorkflowViewState.IdRef="Parallel_1">
+    <Parallel DisplayName="Parallel - 넣어야할좌표 기록" sap:VirtualizedContainerService.HintSize="588.8,52.8" sap2010:WorkflowViewState.IdRef="Parallel_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -430,7 +428,7 @@
         <ui:ClearDataTable DataTable="[dt_탬플릿]" DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="651.2,22.4" sap2010:WorkflowViewState.IdRef="ClearDataTable_4" />
       </Sequence>
     </Parallel>
-    <Assign sap:VirtualizedContainerService.HintSize="710.4,60" sap2010:WorkflowViewState.IdRef="Assign_21">
+    <Assign sap:VirtualizedContainerService.HintSize="588.8,60" sap2010:WorkflowViewState.IdRef="Assign_21">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[n_loopCount]</OutArgument>
       </Assign.To>
@@ -438,7 +436,7 @@
         <InArgument x:TypeArguments="x:Int32">[list_탬플릿인택스리스트.Count]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="710.4,959.2" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_8" WorkbookPath="[str_filePath + &quot;.xls&quot;]">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel - 안전을위한행추가" sap:VirtualizedContainerService.HintSize="588.8,52.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_8" WorkbookPath="[str_filePath + &quot;.xls&quot;]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
@@ -451,7 +449,7 @@
                 <x:Boolean x:Key="IsPinned">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <While sap:VirtualizedContainerService.HintSize="635.2,716.8" sap2010:WorkflowViewState.IdRef="While_2">
+            <While DisplayName="While - 각태이블행추가" sap:VirtualizedContainerService.HintSize="635.2,716.8" sap2010:WorkflowViewState.IdRef="While_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsPinned">True</x:Boolean>
@@ -468,7 +466,7 @@
                     <x:Boolean x:Key="IsPinned">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <If Condition="[loopSwitch = 1]" sap:VirtualizedContainerService.HintSize="548.8,364.8" sap2010:WorkflowViewState.IdRef="If_8">
+                <If Condition="[loopSwitch = 1]" DisplayName="If - 끝은DT_SIZE이기에" sap:VirtualizedContainerService.HintSize="548.8,364.8" sap2010:WorkflowViewState.IdRef="If_8">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsPinned">True</x:Boolean>
@@ -513,13 +511,13 @@
       </ui:ExcelApplicationScope.Body>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsPinned">True</x:Boolean>
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ExcelApplicationScope>
-    <ClearCollection x:TypeArguments="x:String" Collection="[list_탬플릿인택스리스트]" DisplayName="Clear Collection" sap:VirtualizedContainerService.HintSize="710.4,22.4" sap2010:WorkflowViewState.IdRef="ClearCollection`1_1" />
-    <Sequence DisplayName="탬플랫처리" sap:VirtualizedContainerService.HintSize="710.4,68.8" sap2010:WorkflowViewState.IdRef="Sequence_51">
+    <ClearCollection x:TypeArguments="x:String" Collection="[list_탬플릿인택스리스트]" DisplayName="Clear Collection" sap:VirtualizedContainerService.HintSize="588.8,22.4" sap2010:WorkflowViewState.IdRef="ClearCollection`1_1" />
+    <Sequence DisplayName="탬플랫처리" sap:VirtualizedContainerService.HintSize="588.8,68.8" sap2010:WorkflowViewState.IdRef="Sequence_51">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -638,7 +636,7 @@
       </ui:ForEachRow>
       <ui:ClearDataTable DataTable="[dt_탬플릿]" DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="263.2,22.4" sap2010:WorkflowViewState.IdRef="ClearDataTable_5" />
     </Sequence>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each - 결과 액셀만들기" sap:VirtualizedContainerService.HintSize="710.4,52.8" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[list_좌표시작리스트]">
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each - 결과 액셀만들기" sap:VirtualizedContainerService.HintSize="588.8,1439.2" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[list_좌표시작리스트]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
@@ -852,12 +850,12 @@
       </ui:ForEach.Body>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEach>
-    <ui:StartProcess Arguments="{x:Null}" DisplayName="Start Process - PPT" FileName="[str_today+&quot;.pptx&quot;]" sap:VirtualizedContainerService.HintSize="710.4,52.8" sap2010:WorkflowViewState.IdRef="StartProcess_1" WorkingDirectory="C:\Users\srkim\OneDrive\문서\김영\SingleFramework\2.Output">
+    <ui:StartProcess Arguments="{x:Null}" DisplayName="Start Process - PPT" FileName="[str_today+&quot;.pptx&quot;]" sap:VirtualizedContainerService.HintSize="588.8,52.8" sap2010:WorkflowViewState.IdRef="StartProcess_1" WorkingDirectory="C:\Users\srkim\OneDrive\문서\김영\SingleFramework\2.Output">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -865,7 +863,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:StartProcess>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel - PPT로 복사하기" sap:VirtualizedContainerService.HintSize="710.4,52.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_7" WorkbookPath="[str_filePath+&quot;.xls&quot;]">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel - PPT로 복사하기" sap:VirtualizedContainerService.HintSize="588.8,52.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_7" WorkbookPath="[str_filePath+&quot;.xls&quot;]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
@@ -1111,7 +1109,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ExcelApplicationScope>
-    <ui:CloseWindow Selector="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Close Window - PPT" sap:VirtualizedContainerService.HintSize="710.4,52.8" sap2010:WorkflowViewState.IdRef="CloseWindow_2" UseWindow="[ppt_window]" WaitForReady="INTERACTIVE">
+    <ui:CloseWindow Selector="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Close Window - PPT" sap:VirtualizedContainerService.HintSize="588.8,52.8" sap2010:WorkflowViewState.IdRef="CloseWindow_2" UseWindow="[ppt_window]" WaitForReady="INTERACTIVE">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
