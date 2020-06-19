@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>751.2,1254.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>797.6,3278.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>받은파일_처리_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="24">
@@ -70,7 +70,7 @@
       <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="받은파일_처리" sap:VirtualizedContainerService.HintSize="304.8,1089.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="받은파일_처리" sap:VirtualizedContainerService.HintSize="702.4,3113.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_풀태이블" />
       <Variable x:TypeArguments="scg:List(x:String)" Name="list_sheets" />
@@ -88,11 +88,7 @@
       <Variable x:TypeArguments="ui:Window" Name="ppt_window" />
       <Variable x:TypeArguments="x:Int32" Default="1" Name="loopSwitch" />
       <Variable x:TypeArguments="x:Int32" Name="n_loopCount" />
-      <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="dic_PPT로가는좌표">
-        <Variable.Default>
-          <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="New Dictionary(of String,String)" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Default="[New Dictionary(of String,String)]" Name="dic_PPT로가는좌표" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -100,7 +96,7 @@
         <x:Boolean x:Key="IsPinned">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel - 셀찾기" sap:VirtualizedContainerService.HintSize="263.2,52.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" WorkbookPath="[in_str_InputPath +&quot;\noname.xls&quot;]">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel - 셀찾기" sap:VirtualizedContainerService.HintSize="660.8,52.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" WorkbookPath="[in_str_InputPath +&quot;\noname.xls&quot;]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
@@ -250,7 +246,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ExcelApplicationScope>
-    <Assign DisplayName="Assign - 오늘 날짜" sap:VirtualizedContainerService.HintSize="263.2,60" sap2010:WorkflowViewState.IdRef="Assign_17">
+    <Assign DisplayName="Assign - 오늘 날짜" sap:VirtualizedContainerService.HintSize="660.8,60" sap2010:WorkflowViewState.IdRef="Assign_17">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[str_today]</OutArgument>
       </Assign.To>
@@ -258,7 +254,7 @@
         <InArgument x:TypeArguments="x:String">[Now.ToString("yyyy-MM-dd")]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign DisplayName="Assign - 파일경로" sap:VirtualizedContainerService.HintSize="263.2,60" sap2010:WorkflowViewState.IdRef="Assign_15">
+    <Assign DisplayName="Assign - 파일경로" sap:VirtualizedContainerService.HintSize="660.8,60" sap2010:WorkflowViewState.IdRef="Assign_15">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[str_filePath]</OutArgument>
       </Assign.To>
@@ -266,7 +262,7 @@
         <InArgument x:TypeArguments="x:String">[in_str_OutputPath + "\" + str_today]</InArgument>
       </Assign.Value>
     </Assign>
-    <Parallel DisplayName="Parallel - 오늘의 결과파일" sap:VirtualizedContainerService.HintSize="263.2,52.8" sap2010:WorkflowViewState.IdRef="Parallel_2">
+    <Parallel DisplayName="Parallel - 오늘의 결과파일" sap:VirtualizedContainerService.HintSize="660.8,52.8" sap2010:WorkflowViewState.IdRef="Parallel_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -290,7 +286,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:CopyFile>
     </Parallel>
-    <Sequence DisplayName="탬플랫처리 - 좌표" sap:VirtualizedContainerService.HintSize="263.2,68.8" sap2010:WorkflowViewState.IdRef="Sequence_32">
+    <Sequence DisplayName="탬플랫처리 - 좌표" sap:VirtualizedContainerService.HintSize="660.8,68.8" sap2010:WorkflowViewState.IdRef="Sequence_32">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -383,7 +379,7 @@
       </ui:ForEachRow>
       <ui:ClearDataTable DataTable="[dt_탬플릿]" DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="ClearDataTable_4" />
     </Sequence>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel - 안전을위한행추가" sap:VirtualizedContainerService.HintSize="263.2,52.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_8" WorkbookPath="[str_filePath + &quot;.xls&quot;]">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel - 안전을위한행추가" sap:VirtualizedContainerService.HintSize="660.8,52.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_8" WorkbookPath="[str_filePath + &quot;.xls&quot;]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
@@ -471,7 +467,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ExcelApplicationScope>
-    <Sequence DisplayName="탬플랫처리 - 좌표" sap:VirtualizedContainerService.HintSize="263.2,68.8" sap2010:WorkflowViewState.IdRef="Sequence_51">
+    <Sequence DisplayName="탬플랫처리 - 좌표" sap:VirtualizedContainerService.HintSize="660.8,68.8" sap2010:WorkflowViewState.IdRef="Sequence_51">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -565,7 +561,7 @@
       </ui:ForEachRow>
       <ui:ClearDataTable DataTable="[dt_탬플릿]" DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="ClearDataTable_5" />
     </Sequence>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each - 결과 액셀만들기" sap:VirtualizedContainerService.HintSize="263.2,52.8" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[list_좌표시작리스트]">
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each - 결과 액셀만들기" sap:VirtualizedContainerService.HintSize="660.8,52.8" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[list_좌표시작리스트]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
@@ -590,14 +586,14 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <TryCatch.Try>
-                <Sequence sap:VirtualizedContainerService.HintSize="475.2,696" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                <Sequence sap:VirtualizedContainerService.HintSize="304.8,696" sap2010:WorkflowViewState.IdRef="Sequence_25">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign sap:VirtualizedContainerService.HintSize="433.6,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+                  <Assign sap:VirtualizedContainerService.HintSize="263.2,60" sap2010:WorkflowViewState.IdRef="Assign_7">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[str_readRang]</OutArgument>
                     </Assign.To>
@@ -605,14 +601,14 @@
                       <InArgument x:TypeArguments="x:String">["A"+item+":P"+(cInt(list_좌표앤드리스트(n_자르기인택스)) - 1).ToString]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:ReadRange AddHeaders="True" DataTable="[dt_tempDT]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="ReadRange_2" Range="[str_readRang]" SheetName="[list_sheets(0)]" WorkbookPath="[in_str_InputPath +&quot;\noname.xls&quot;]">
+                  <ui:ReadRange AddHeaders="True" DataTable="[dt_tempDT]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="263.2,52.8" sap2010:WorkflowViewState.IdRef="ReadRange_2" Range="[str_readRang]" SheetName="[list_sheets(0)]" WorkbookPath="[in_str_InputPath +&quot;\noname.xls&quot;]">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:ReadRange>
-                  <ui:FilterDataTable DataTable="[dt_tempDT]" DisplayName="Filter Data Table" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[dt_tempDT]" SelectColumnsMode="Keep">
+                  <ui:FilterDataTable DataTable="[dt_tempDT]" DisplayName="Filter Data Table" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="263.2,52.8" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[dt_tempDT]" SelectColumnsMode="Keep">
                     <ui:FilterDataTable.Filters>
                       <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                         <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EMPTY">
@@ -640,7 +636,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:FilterDataTable>
-                  <Assign sap:VirtualizedContainerService.HintSize="433.6,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+                  <Assign sap:VirtualizedContainerService.HintSize="263.2,60" sap2010:WorkflowViewState.IdRef="Assign_13">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[dic_PPT로가는좌표(list_탬플릿인택스리스트(n_자르기인택스-1))]</OutArgument>
                     </Assign.To>
@@ -648,7 +644,7 @@
                       <InArgument x:TypeArguments="x:String">[(cint(list_탬플릿인택스리스트(n_자르기인택스-1)) + cint(dt_tempDT.Rows.Count.ToString)).ToString]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_4" WorkbookPath="[str_filePath + &quot;.xls&quot;]">
+                  <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="263.2,52.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_4" WorkbookPath="[str_filePath + &quot;.xls&quot;]">
                     <ui:ExcelApplicationScope.Body>
                       <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                         <ActivityAction.Argument>
@@ -678,8 +674,8 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:ExcelApplicationScope>
-                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="433.6,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[list_탬플릿인택스리스트(n_자르기인택스-1).ToString +&quot;----&gt;&quot; + dic_PPT로가는좌표(list_탬플릿인택스리스트(n_자르기인택스-1)) +&quot;---&gt;가다&quot;]" />
-                  <ui:ClearDataTable DataTable="[dt_tempDT]" DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="433.6,22.4" sap2010:WorkflowViewState.IdRef="ClearDataTable_2" />
+                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="263.2,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[list_탬플릿인택스리스트(n_자르기인택스-1).ToString +&quot;----&gt;&quot; + dic_PPT로가는좌표(list_탬플릿인택스리스트(n_자르기인택스-1)) +&quot;---&gt;가다&quot;]" />
+                  <ui:ClearDataTable DataTable="[dt_tempDT]" DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="263.2,22.4" sap2010:WorkflowViewState.IdRef="ClearDataTable_2" />
                 </Sequence>
               </TryCatch.Try>
               <TryCatch.Catches>
@@ -790,7 +786,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEach>
-    <ui:StartProcess Arguments="{x:Null}" DisplayName="Start Process - PPT" FileName="[str_today+&quot;.pptx&quot;]" sap:VirtualizedContainerService.HintSize="263.2,52.8" sap2010:WorkflowViewState.IdRef="StartProcess_1" WorkingDirectory="C:\Users\srkim\OneDrive\문서\김영\SingleFramework\2.Output">
+    <ui:StartProcess Arguments="{x:Null}" DisplayName="Start Process - PPT" FileName="[str_today+&quot;.pptx&quot;]" sap:VirtualizedContainerService.HintSize="660.8,52.8" sap2010:WorkflowViewState.IdRef="StartProcess_1" WorkingDirectory="C:\Users\srkim\OneDrive\문서\김영\SingleFramework\2.Output">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -798,13 +794,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:StartProcess>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel - PPT로 복사하기" sap:VirtualizedContainerService.HintSize="263.2,52.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_7" WorkbookPath="[str_filePath+&quot;.xls&quot;]">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel - PPT로 복사하기" sap:VirtualizedContainerService.HintSize="660.8,2046.4" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_7" WorkbookPath="[str_filePath+&quot;.xls&quot;]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="475.2,488" sap2010:WorkflowViewState.IdRef="Sequence_43">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="627.2,1896.8" sap2010:WorkflowViewState.IdRef="Sequence_43">
             <Sequence.Variables>
               <Variable x:TypeArguments="ui:Window" Name="window" />
             </Sequence.Variables>
@@ -814,27 +810,27 @@
                 <x:Boolean x:Key="IsPinned">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:WindowScope SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" ApplicationWindow="[window]" DisplayName="Attach Window " sap:VirtualizedContainerService.HintSize="433.6,395.2" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="dbc34d0db5537fe82eed5e6a253ee22c" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='*-??-??.xls  * - Excel' /&gt;">
+            <ui:WindowScope SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" ApplicationWindow="[window]" DisplayName="Attach Window " sap:VirtualizedContainerService.HintSize="585.6,1804" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="dbc34d0db5537fe82eed5e6a253ee22c" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='*-??-??.xls  * - Excel' /&gt;">
               <ui:WindowScope.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="241.6,208" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="552,1616.8" sap2010:WorkflowViewState.IdRef="Sequence_39">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:MaximizeWindow DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="MaximizeWindow_2" Window="[window]" />
-                    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[list_탬플릿인택스리스트]">
+                    <ui:MaximizeWindow DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="510.4,22.4" sap2010:WorkflowViewState.IdRef="MaximizeWindow_2" Window="[window]" />
+                    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="510.4,1461.6" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[list_탬플릿인택스리스트]">
                       <ui:ForEach.Body>
                         <ActivityAction x:TypeArguments="x:String">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="x:String" Name="item" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="304.8,531.2" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="475.2,1327.2" sap2010:WorkflowViewState.IdRef="Sequence_42">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="x:String" Name="str_tempClick" />
                             </Sequence.Variables>
@@ -844,7 +840,7 @@
                                 <x:Boolean x:Key="IsPinned">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Assign sap:VirtualizedContainerService.HintSize="263.2,60" sap2010:WorkflowViewState.IdRef="Assign_18">
+                            <Assign sap:VirtualizedContainerService.HintSize="433.6,60" sap2010:WorkflowViewState.IdRef="Assign_18">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:String">[str_tempClick]</OutArgument>
                               </Assign.To>
@@ -852,7 +848,7 @@
                                 <InArgument x:TypeArguments="x:String">["A"+item+":H"+dic_PPT로가는좌표(item)]</InArgument>
                               </Assign.Value>
                             </Assign>
-                            <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayBefore="1000" DisplayName="Type Into 'Edit'" EmptyField="True" sap:VirtualizedContainerService.HintSize="263.2,52.8" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[str_tempClick+ &quot;[k(enter)]&quot;]">
+                            <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayBefore="200" DisplayName="Type Into 'Edit'" EmptyField="True" sap:VirtualizedContainerService.HintSize="433.6,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="True" Text="[str_tempClick+ &quot;[k(enter)]&quot;]">
                               <ui:TypeInto.Target>
                                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ee7a11d9-25ae-4c68-8723-32609507466c" InformativeScreenshot="ac6f00924abd4c9b5775b3c9b92a004d" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='*-??-??.xls  * - Excel' /&gt;&lt;wnd cls='ComboBox' ctrlid='13' /&gt;&lt;wnd cls='Edit' /&gt;">
                                   <ui:Target.TimeoutMS>
@@ -863,8 +859,13 @@
                                   </ui:Target.WaitForReady>
                                 </ui:Target>
                               </ui:TypeInto.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
                             </ui:TypeInto>
-                            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DelayMS="300" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="263.2,52.8" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="c" KeyModifiers="Ctrl">
+                            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SpecialKey="{x:Null}" Activate="True" DelayBefore="200" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="c" KeyModifiers="Ctrl" SendWindowMessages="True">
                               <ui:SendHotkey.Target>
                                 <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[window]" Id="b71dc325-fa97-4e17-adc6-d1a2d640f4dc">
                                   <ui:Target.TimeoutMS>
@@ -876,7 +877,7 @@
                                 </ui:Target>
                               </ui:SendHotkey.Target>
                             </ui:SendHotkey>
-                            <ui:WindowScope SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" ApplicationWindow="[ppt_window]" DisplayName="Attach Window - PPT" sap:VirtualizedContainerService.HintSize="263.2,52.8" sap2010:WorkflowViewState.IdRef="WindowScope_3" InformativeScreenshot="ea9bec7ae56dbe8966b38515c064ebdd" Selector="&lt;wnd app='powerpnt.exe' omit:cls='PPTFrameClass' title='*-??-??.pptx - *' /&gt;&lt;wnd cls='mdiClass' /&gt;">
+                            <ui:WindowScope SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" ApplicationWindow="[ppt_window]" DisplayName="Attach Window - PPT" sap:VirtualizedContainerService.HintSize="433.6,766.4" sap2010:WorkflowViewState.IdRef="WindowScope_3" InformativeScreenshot="ea9bec7ae56dbe8966b38515c064ebdd" Selector="&lt;wnd app='powerpnt.exe' omit:cls='PPTFrameClass' title='*-??-??.pptx - *' /&gt;&lt;wnd cls='mdiClass' /&gt;">
                               <ui:WindowScope.Body>
                                 <ActivityAction x:TypeArguments="x:Object">
                                   <ActivityAction.Argument>
@@ -893,7 +894,7 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <ui:MaximizeWindow DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="MaximizeWindow_3" Window="[ppt_window]" />
-                                    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="300" DisplayName="Click - 찾기" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                    <ui:Click AlterIfDisabled="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="200" DisplayName="Click - 찾기" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
                                       <ui:Click.CursorPosition>
                                         <ui:CursorPosition Position="Center">
                                           <ui:CursorPosition.OffsetX>
@@ -934,7 +935,7 @@
                                                 <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" EmptyField="{x:Null}" SimulateType="{x:Null}" Activate="True" DelayMS="200" DisplayName="Type Into - 보사위치" sap:VirtualizedContainerService.HintSize="333.6,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_2" SendWindowMessages="True" Text="[&quot;복사자료 &quot;+n_복사자료남버.ToString+&quot;[k(enter)]&quot;]">
+                                            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SimulateType="{x:Null}" Activate="True" DelayBefore="200" DisplayName="Type Into - 보사위치" EmptyField="True" sap:VirtualizedContainerService.HintSize="333.6,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_2" SendWindowMessages="True" Text="[&quot;복사자료 &quot;+n_복사자료남버.ToString+&quot;[k(enter)]&quot;]">
                                               <ui:TypeInto.Target>
                                                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a4bcea4f-4525-4a23-bd57-d73b5ba836f8" InformativeScreenshot="cd17204d05d2f551c689196a6f7b5b76" Selector="&lt;wnd aaname='찾기' cls='NetUIHWND' /&gt;&lt;wnd aaname='찾을 내용' cls='RICHEDIT60W' /&gt;">
                                                   <ui:Target.TimeoutMS>
@@ -969,7 +970,7 @@
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                     </ui:CloseWindow>
-                                    <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayMS="300" DisplayName="Send Hotkey - 복사" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="v" KeyModifiers="Ctrl">
+                                    <ui:SendHotkey DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayBefore="200" DisplayName="Send Hotkey - 복사" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="v" KeyModifiers="Ctrl">
                                       <ui:SendHotkey.Target>
                                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="b71dc325-fa97-4e17-adc6-d1a2d640f4dc">
                                           <ui:Target.TimeoutMS>
@@ -987,7 +988,7 @@
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                     </ui:SendHotkey>
-                                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DelayMS="200" DisplayName="Send Hotkey - 저장" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="s" KeyModifiers="Ctrl">
+                                    <ui:SendHotkey DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayBefore="200" DisplayName="Send Hotkey - 저장" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="s" KeyModifiers="Ctrl">
                                       <ui:SendHotkey.Target>
                                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="937fb822-723f-4017-a405-b0ae67c47da5">
                                           <ui:Target.TimeoutMS>
@@ -1010,12 +1011,12 @@
                               </ui:WindowScope.Body>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:WindowScope>
-                            <Assign sap:VirtualizedContainerService.HintSize="263.2,60" sap2010:WorkflowViewState.IdRef="Assign_16">
+                            <Assign sap:VirtualizedContainerService.HintSize="433.6,60" sap2010:WorkflowViewState.IdRef="Assign_16">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:Int32">[n_복사자료남버]</OutArgument>
                               </Assign.To>
@@ -1028,8 +1029,8 @@
                       </ui:ForEach.Body>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:ForEach>
@@ -1048,11 +1049,11 @@
       </ui:ExcelApplicationScope.Body>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ExcelApplicationScope>
-    <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process - PPT" sap:VirtualizedContainerService.HintSize="263.2,22.4" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="POWERPNT" />
+    <ui:CloseWindow Selector="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Close Window" sap:VirtualizedContainerService.HintSize="660.8,52.8" sap2010:WorkflowViewState.IdRef="CloseWindow_2" UseWindow="[ppt_window]" WaitForReady="INTERACTIVE" />
   </Sequence>
 </Activity>
